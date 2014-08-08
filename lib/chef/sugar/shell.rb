@@ -113,7 +113,6 @@ class Chef
       def version_for(cmd, flag = '--version')
         cmd = Mixlib::ShellOut.new("#{cmd} #{flag}")
         cmd.run_command
-        cmd.error!
         [cmd.stdout.strip, cmd.stderr.strip].join("\n")
       end
     end
